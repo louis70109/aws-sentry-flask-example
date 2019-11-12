@@ -1,6 +1,6 @@
 {
-  "name": "HIP-REST-api-applocation",
-  "description": "this is echo!",
+  "name": "aws-sentry-flask-example",
+  "description": "this is sample!",
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {

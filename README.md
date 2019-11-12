@@ -1,42 +1,44 @@
-# aws-line-wsgi-python
+# aws-sentry-flask-example
 
 Welcome here!
 
-This is [aws-line-echo-bot](https://github.com/louis70109/aws-line-echo-bot) upgrade version,
-using serverless to build a line echo bot with WSGI.
+This is base on [aws-line-echo-bot](https://github.com/louis70109/aws-line-echo-bot)'s version,
+using serverless to build a line echo bot and import sentry to catch error by flask in AWS.
 
 # Bebore you start
 
 1. Line developer account
 2. [Line Message API](https://developers.line.biz/en/docs/messaging-api/getting-started/)
+3. Sentry account
 
 # Quick Start
 
 1. Install serverless via npm
 
-```bash=
+```bash
 $ npm install -g serverless
 ```
 
 2. Setup your **AWS** ceritficate
 
-```bash=
+```bash
 export AWS_ACCESS_KEY_ID=<your-key-here>
 export AWS_SECRET_ACCESS_KEY=<your-secret-key-here>
 ```
 
 3. Clone this project
 
-```bash=
+```bash
 $ serverless install --url https://github.com/louis70109/aws-line-wsgi-python -n <YOUR_FILE_NAME>
 $ cd <YOUR_FILE_NAME>/
 ```
 
-4. Insert you line bot secret & key
+4. Rename `.env.sample` to `.env` and insert key in file.
 
-```python=
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+```sh
+SENTRY_DSN=
+LINE_CHANNEL_TOKEN=
+LINE_CHANNEL_SECRET_KEY=
 ```
 
 5. Deploy the webhhok function
@@ -57,6 +59,11 @@ serverless deploy
 
 8. Now you can test you chatbot, have fun!
 ![Echo bot](https://i.imgur.com/Tn1XS13.png)
+
+9. If have logging `waring`, `error`, Internal(500) or Traceback it will send you Sentry account.
+
+![](https://i.imgur.com/JvVeSdd.png)
+
 
 # Author
 

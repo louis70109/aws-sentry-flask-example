@@ -1,9 +1,7 @@
-service: aws-line-wsgi-python
+service: aws-sentry-flask-example
 provider:
   name: aws
   runtime: python3.7
-  # region: ap-northeast-1
-  # environment:
 
 functions:
   api:
