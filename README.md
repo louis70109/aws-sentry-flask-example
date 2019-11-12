@@ -5,6 +5,8 @@ Welcome here!
 This is base on [aws-line-echo-bot](https://github.com/louis70109/aws-line-echo-bot)'s version,
 using serverless to build a line echo bot and import sentry to catch error by flask in AWS.
 
+Topic link: [url](https://nijialin.com/2019/11/12/sentry-in-serverless)
+
 # Bebore you start
 
 1. Line developer account
