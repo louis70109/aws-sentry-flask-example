@@ -1,0 +1,22 @@
+service: aws-line-wsgi-python
+provider:
+  name: aws
+  runtime: python3.7
+  # region: ap-northeast-1
+  # environment:
+
+functions:
+  api:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}
+
+custom:
+  wsgi:
+    app: api.app
+
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-dotenv-plugin
